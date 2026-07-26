@@ -45,13 +45,13 @@ function Dashboard() {
       setLoadingUsers(true);
 
       const response = await axios.get(
-        "http://localhost:5000/api/auth/users",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+  `${import.meta.env.VITE_API_URL}/api/auth/users`,
+  {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+);
 
       const usersData = Array.isArray(response.data)
         ? response.data
@@ -99,8 +99,7 @@ function Dashboard() {
       return profilePic;
     }
 
-    return `http://localhost:5000${profilePic}`;
-  };
+return `${import.meta.env.VITE_API_URL}${profilePic}`;  };
 
   const loggedInUserImage = getProfileImage(
     loggedInUser?.profilePic
