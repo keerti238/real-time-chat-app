@@ -52,7 +52,8 @@ function Dashboard() {
     },
   }
 );
-
+console.log("API URL:", import.meta.env.VITE_API_URL);
+console.log("Users response:", response.data);
       const usersData = Array.isArray(response.data)
         ? response.data
         : Array.isArray(response.data?.users)
