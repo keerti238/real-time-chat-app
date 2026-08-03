@@ -36,9 +36,9 @@ function Register() {
       setLoading(true);
 
       await axios.post(
-        "http://localhost:5000/api/auth/register",
-        formData
-      );
+  "https://real-time-chat-app-r46v.onrender.com/api/auth/register",
+  formData
+);
 
       toast.success("Registration successful");
 
